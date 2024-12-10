@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekolojik Kredi Sistemi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sol Menü -->
+        <div class="left-menu">
+            <h2>Ekolojik Kredi</h2>
+            <nav>
+                <ul>
+                    <li><button id="okulKayitBtn">Okul Kaydı</button></li>
+                    <li><button id="ogrenciKayitBtn">Öğrenci Kaydı</button></li>
+                    <li><button id="dataEntryBtn">Veri Girişi</button></li>
+                    <li><button id="viewDataBtn">Veri Görüntüle</button></li>
+                    <li><button id="toplamAtikBtn">Toplam Atık</button></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Sağ Menü (Formlar ve İçerik) -->
+        <div class="right-menu">
+            <div id="okulKayitFormContainer" class="form-container" style="display:none;">
+                <h3>Okul Kaydı</h3>
+                <form id="okulKayitForm">
+                    <label for="schoolProvince">İl:</label>
+                    <input type="text" id="schoolProvince" required><br><br>
+                    <label for="schoolDistrict">İlçe:</label>
+                    <input type="text" id="schoolDistrict" required><br><br>
+                    <label for="schoolName">Okul Adı:</label>
+                    <input type="text" id="schoolName" required><br><br>
+                    <label for="schoolPassword">Şifre:</label>
+                    <input type="password" id="schoolPassword" required><br><br>
+                    <button type="submit">Kaydet</button>
+                </form>
+            </div>
+
+            <div id="ogrenciKayitFormContainer" class="form-container" style="display:none;">
+                <h3>Öğrenci Kaydı</h3>
+                <form id="ogrenciKayitForm">
+                    <label for="studentName">Ad:</label>
+                    <input type="text" id="studentName" required><br><br>
+                    <label for="studentSurname">Soyad:</label>
+                    <input type="text" id="studentSurname" required><br><br>
+                    <label for="studentEmail">E-posta:</label>
+                    <input type="email" id="studentEmail" required><br><br>
+                    <label for="studentNumber">Öğrenci No:</label>
+                    <input type="text" id="studentNumber" required><br><br>
+                    <label for="studentPhone">Telefon:</label>
+                    <input type="text" id="studentPhone" required><br><br>
+                    <label for="studentClass">Sınıf:</label>
+                    <input type="text" id="studentClass" required><br><br>
+                    <button type="submit">Kaydet</button>
+                </form>
+            </div>
+
+            <div id="dataEntryFormContainer" class="form-container" style="display:none;">
+                <h3>Veri Girişi</h3>
+                <form id="dataEntryForm">
+                    <label for="wasteType">Atık Türü:</label>
+                    <select id="wasteType">
+                        <option value="Yağ">Yağ</option>
+                        <option value="Tekstil">Tekstil</option>
+                        <option value="Pil">Pil</option>
+                        <option value="Elektronik">Elektronik</option>
+                        <option value="Kağıt">Kağıt</option>
+                        <option value="Cam">Cam</option>
+                        <option value="Metal">Metal</option>
+                        <option value="Plastik">Plastik</option>
+                    </select><br><br>
+                    <label for="wasteWeight">Atık Ağırlığı (kg):</label>
+                    <input type="number" id="wasteWeight" required><br><br>
+                    <button type="submit">Veri Girişi Yap</button>
+                </form>
+            </div>
+
+            <div id="viewDataFormContainer" class="form-container" style="display:none;">
+                <h3>Veri Görüntüle</h3>
+                <form id="viewDataForm">
+                    <label for="viewStudentEmail">Öğrenci E-posta:</label>
+                    <input type="email" id="viewStudentEmail" required><br><br>
+                    <label for="viewStudentNumber">Öğrenci Numarası:</label>
+                    <input type="text" id="viewStudentNumber" required><br><br>
+                    <button type="submit">Veriyi Görüntüle</button>
+                </form>
+                <div id="viewResult"></div>
+            </div>
+
+            <div id="toplamAtikContainer" class="form-container" style="display:none;">
+                <h3>Toplam Atık Sayacı</h3>
+                <p>Toplam Atık Miktarı: <span id="totalWasteAmount">0</span> kg</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
